@@ -1,0 +1,20 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/afarshatov/micro-framework"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.1",
+        "micro/micro": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/classes/"
+        },
+        "classmap": [
+            "vendor/xcube_bijection/XCube_BijectionCode.class.php"
+        ]
+    }
+}
