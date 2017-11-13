@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <link href="https://www.xiag.ch/files/css/testtask-styles.css?data=26.07.2012" rel="stylesheet">
+    <link href="/public/css/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>{{ label:app.title }}</title>
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0" />
@@ -10,21 +11,17 @@
 <body>
     <div class="content">
         <header>{{ label:index.title }}</header>
-        <form action="{{ generate_url_route }}" onsubmit="return false" id="js-generate-url-form">
-            <table>
-                <tr>
-                    <th>{{ label:index.input_url }}</th>
-                    <th>{{ label:index.output_url }}</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" name="url" id="js-input-url">
+        <main>
+            <div class="main-wrapper">
+                <div class="form">
+                    <form action="{{ generate_url_route }}" onsubmit="return false" id="js-generate-url-form">
+                        <input type="text" class="text-input" name="long-url" id="js-input-url" placeholder="{{ label:index.input_url }}">
                         <input type="submit" value="{{ label:index.submit }}">
-                    </td>
-                    <td id="js-short-url"></td>
-                </tr>
-            </table>
-        </form>
+                        <input type="text" class="text-input" name="short-url" id="js-short-url" placeholder="{{ label:index.output_url }}">
+                    </form>
+                </div>
+            </div>
+        </main>
         <footer>
         </footer>
     </div>

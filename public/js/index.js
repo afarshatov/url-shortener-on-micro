@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
     var doAjaxRequest = function(url, queryParams, options) {
         var xhr = new XMLHttpRequest();
@@ -42,7 +44,9 @@
 
             self.form.addEventListener('submit', function(event) {
                 event.preventDefault();
-                document.getElementById('js-short-url').innerHTML = '';
+                var shortUrlInput = document.getElementById('js-short-url');
+                shortUrlInput.value = '';
+                shortUrlInput.style.display = '';
 
                 if (self.isInProgress) {
                     return false;
@@ -78,14 +82,17 @@
             data = JSON.parse(data);
 
             if (data.success) {
-                var placeForShortUrl = document.getElementById('js-short-url');
-                var link = document.createElement('a');
-                link.setAttribute('href', data.short_url);
-                link.innerHTML = data.short_url;
-                link.target = '_blank';
-                placeForShortUrl.appendChild(link);
+                var shortUrlInput = document.getElementById('js-short-url');
+                shortUrlInput.value = data.short_url;
+                shortUrlInput.style.display = 'block';
+                shortUrlInput.focus();
+                try {
+                    shortUrlInput.select();
+                } catch (e) {
+                    shortUrlInput.setSelectionRange(0, shortUrlInput.value.length);
+                }
             } else {
-                alert(data.message);
+                alert(data.error);
             }
         },
         function(code, text) {

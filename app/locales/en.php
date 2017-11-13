@@ -2,7 +2,7 @@
 
 return [
     'app' => [
-        'title' => 'XIAG test task',
+        'title' => 'URL Shortener',
     ],
     'index' => [
         'title' => 'URL shortener',

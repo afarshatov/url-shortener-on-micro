@@ -1,0 +1,78 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    height: 200px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #444;
+}
+
+main {
+    text-align: center;
+}
+
+.form {
+    width: 385px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.form .text-input {
+    box-sizing: border-box;
+    padding: 15px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.form input.text-input[name="long-url"]  {
+    display: inline-block;
+    width: 300px;
+    margin-right: 15px;
+}
+
+.form input.text-input[name="short-url"] {
+    display: none;
+    width: 100%;
+}
+
+.form input[type="submit"] {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 65px;
+    border: none;
+    background-color: aqua;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px 10px;
+    color: #444;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.form input[type="submit"]:hover {
+    background-color: aquamarine;
+}
+
+.form input[type="submit"]:active {
+    background-color: #00e1ff;
+}
+
+.form input[type="submit"]:focus {
+    outline: none;
+}
